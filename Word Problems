@@ -1,0 +1,22 @@
+import random
+import time 
+
+questions = [("Kieran needs to run 2500 metres. In the first tem minutes he runs 639 metres and in the second ten minutes he runs 794 metres. How much further does he still need to run?","1067"), ("Chocolate bar:£1.39 Pack of marshmallows:£2.47 Packet of sweets:£1.76 Special Offer: Any three items for £4.10 How much money will Len save by buying one of each item using the special offer?","1.52"),("Mrs Flood has 1938 Pencils at the beginning of the school year. In term one, 348 pencils are used and in term two, 827 pencils are used. How many pencils are left remaining to use in term three?","763"),("Fish:£3.55 Chips:£1.29 Gravy:£0.75 Peas:£0.90 Nigel has £5. He wants to buy fish, chips and peas. How much more money will Nigel need?","0.74"),("A bottle holds two litres of freshly squeezed orange juice. Denver fills three glasses with orange juice. He puts 170 millilitres in each glass. How much orange juice is left in the bottle?","1490")]
+
+
+start_time = time.time()
+time_limit = 15*60 
+
+print("The quiz will run for 15 minutes.")
+
+while time.time() -start_time < time_limit:
+    question, answer = random.choice(questions)
+
+    while True: 
+        user_answer = input(question + "\nYour answer:")
+
+        if user_answer.strip() == answer:
+            print("Correct! Well done!")
+            break 
+        else:
+            print("Wrong, try again")
